@@ -75,11 +75,21 @@ WSGI_APPLICATION = "eventcalendar.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#     }
+# }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
+        'default': {
+            'ENGINE': 'djongo',
+            'NAME': 'django',
+            'ENFORCE_SCHEMA': False,
+            'CLIENT': {
+                'host': 'mongodb+srv://shivaganesh:l86VplZCarREnGkl@cluster0.fh9unog.mongodb.net/test'
+            }  
+        }
 }
 
 
